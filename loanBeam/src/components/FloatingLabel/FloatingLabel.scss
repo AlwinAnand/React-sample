@@ -1,0 +1,356 @@
+@import '../../../Style.scss';
+.errorBorder {
+    label{
+        > input{
+            border-color:#f00 !important;
+        }
+    }
+}
+
+.error_text{
+    @extend %fullWrap;
+    @include titleHev(12px, #e74b24, 16px );
+    margin-top: 5px;
+    padding-left: 5px;
+    text-align: left;
+}
+#hideTextBox{ display: none;}
+
+.floatLabelWrap{  
+    @extend %fullWrap; 
+    @include borderRadius(4px);
+    height: 44px;
+    border: 1px solid #DADCDF;
+    background-color: #F9FAFB;
+    position: relative;
+    font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    
+    .inputTxtStyle{
+      @include borderRadius(0px);
+      border:0px;
+      background-color: transparent;
+      height: 42px;
+      position: relative;
+      z-index: 1;
+      padding: 5px 10px;
+      // padding-top: 20px;
+      color: #1C1C1C;
+      font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      transition: all .2s ease-out;
+      font-weight: normal;
+      opacity: 0.8;
+    }
+  
+    .labelTxt{
+      @include paddingAll(10px);
+      @include titleHev(12px, #2C405A, 22px );
+      position: absolute;
+      margin-bottom: 0px;
+      left:0px;
+      z-index: 0;
+      transform: translateY(0px);
+      transition: all .2s ease-out;
+      opacity: 0.8;
+    }
+  
+  }  
+
+  .iconInfo{
+    position: absolute;
+    right: 10px;
+    top:12px;
+    z-index: 1;
+  }
+
+  .iconInfo svg {
+    color: #757779;
+  }
+
+  .iconInfo svg:hover {
+    color: #32a8f1;
+  }
+
+  .eyeIconWrap { 
+    position: absolute;
+    right: 10px;
+    top:12px;
+    z-index: 1;
+    cursor: pointer;
+    color: #0093EE;
+  }
+
+  .iconInfo > div {
+    color: #ECF5FD !important;
+  }
+  
+  .labelActive {
+    .floatLabelWrap{
+      .labelTxt { 
+        transform: translateY(-8px);
+        font-size: 12px;
+        color: #1C293B;
+        font-size: 11px;
+        opacity: 1;
+        font-weight: bold;
+      }
+      .inputTxtStyle{
+        padding-top: 18px;
+      }
+    }  
+  }
+   
+  .floatLabelWrap.errorBorder{
+    border:none;
+    border-bottom: 1px solid #e74b24;
+  }
+
+  .linkText {
+    color: blue;
+  }
+
+  .linkText:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  :successText {
+    color: green;
+  }
+
+  .DashboardRightSideWrap{
+    .floatLabelWrap{
+      border:0px;
+      border-bottom: 1px solid #DADCDF;
+      background-color: #fff;
+      border-radius: 0px;
+    }
+    .floatLabelWrap.errorBorder {
+      border:none;
+      border-bottom: 1px solid #e74b24;
+    }
+  }
+
+  .server_error_text{
+    @extend %fullWrap;
+    @include titleHev(12px, #e74b24, 16px );
+    @include borderRadius(3px);
+    text-align: left;
+    position: relative;
+    top: -28px;
+    word-break: break-word;
+}
+
+.tooltip.bottom .tooltip-arrow{
+  top: -4px;
+  border-bottom-color: #fff;
+}
+.tooltip-inner{
+  max-width: 300px;
+  text-align: justify;
+}
+
+.iconWarning, .iconRight{ 
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  z-index: 9;
+  color:#f00; font-size: 20px; display: none;
+}
+.iconWarning{
+  cursor: pointer;
+}
+.iconRight{
+  color: #4ECE3D;
+  display: block;
+}
+.errorBorder{
+  .iconWarning{display: block;}
+}
+
+.server_error_wrap{
+  .iconWarning{display: block;}
+}
+
+.iconWarning + .error_text {
+  background-color: #FF151F;
+  color: #fff;
+  padding: 6px 10px;
+  position: absolute;
+  right: 6px;
+  top: 35px;
+  max-width: 90%;
+  border-radius: 3px;
+  transition: all .2s ease-out;
+  opacity: 0;
+}
+.iconWarning:hover + .error_text{
+  opacity: 1;
+  z-index: 1;
+}
+
+.iconWarning + .error_text:before {
+  content: "";
+  border-bottom: 7px solid #ff151f;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  position: absolute;
+  right: 9px;
+  top: -7px;
+}
+
+.iconWarning + .error_text + .iconInfo{
+  right: 40px;
+}
+
+.iconWarning + .error_text + .eyeIconWrap{
+  right: 40px;
+}
+
+.labelActive{
+  .floatLabelWrap {
+    input[name=emailId]{
+      display: block;
+    }
+  }
+}
+
+.DashboardRightSideWrap {
+  .floatLabelWrap:focus-within {
+    border-bottom: 1px solid #0093EE;
+  }
+}
+
+#successBorder.floatLabelWrap{
+  border-bottom: 1px solid #4ECE3D;
+}
+
+#successBorder.floatLabelWrap.errorBorder{
+  border:none;
+  border-bottom: 1px solid #e74b24;
+  .iconRight{
+    display: none;
+  }
+}
+
+.SignTabWrap{
+  .floatLabelWrap{
+    border:0px;
+    border-bottom: 1px solid #DADCDF;
+    background-color: #fff;
+    border-radius: 0px;
+  }
+  .floatLabelWrap.errorBorder {
+    border:none;
+    border-bottom: 1px solid #e74b24;
+  }
+  .floatLabelWrap:focus-within {
+    border-bottom: 1px solid #0093EE;
+  }
+  .formOutterWrap{
+    background-color: #fff;
+    padding: 0px;
+    .floatLabelWrap{
+      background-color: #fff;
+    }
+  } 
+}
+
+.back-btn {
+    background-color: transparent;
+    color: #2C405A;
+}
+.back-btn:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.formOutterWrap .floatLabelWrap {
+  background-color: #f2f2f2;
+  border: none;
+  border-bottom: 1px solid #c5d9e8;
+  .inputTxtStyle {
+      color: #1c293b;
+      
+  }
+  .ui.selection.dropdown .menu {
+      border: none;
+  }
+  .ui.selection.dropdown .menu > .item {
+      border: none;
+      color: #2C405A;
+      background-color: #f2f2f2;
+  }
+  .ui.selection.dropdown .menu > .item:hover {
+    border: none;
+    color: #FAFBFC;
+    background-color:rgba(0,147,238,0.7);
+  }
+  .ui.selection.dropdown .menu > .selected.item {
+    border: none;
+    color: #FAFBFC;
+    background-color: #0093EE !important;
+  }
+  .ui.selection.dropdown .menu .header:hover {
+    background-color: transparent;
+  }
+  .ui.multiple.dropdown > .label {
+      background-color: #ECF5FD;
+      color: #1C293B;
+  }
+  ::-webkit-scrollbar-track {
+      background: white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: #DCDCDC;
+  }
+}
+.formOutterWrap{
+  .back-btn {
+      background-color: transparent;
+      color: #2C405A;
+  }
+  .back-btn:hover {
+      background-color: transparent;
+      text-decoration: underline;
+  }
+}
+.ui.dropdown .menu > .header {
+  margin: 1rem 0 .75rem;
+  padding: 0 1.14285714rem;
+  color: #2C405A;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.form-group {
+  @extend %fullWrap;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+#remove-email-validity {
+  border-bottom: 1px solid #8DABC4;
+  .iconRight {
+    display: none;
+  }
+}
+
+.arrowIconDown{
+  position: absolute;
+  top: 15px;
+  right:20px;
+  cursor: pointer;
+  z-index: 10;
+  height: 10px;
+}
+.arrowIconTop{
+  position: absolute;
+  top: 5px;
+  right:20px;
+  cursor: pointer;
+  z-index: 10;
+  height: 10px;
+}

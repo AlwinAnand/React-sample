@@ -1,0 +1,80 @@
+/*=====RESET STYLE =====*/
+*{margin:0;padding:0;outline:none;}
+body{ font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;}
+body{ font-size:14px;margin:0;padding:0; @extend %font-helvetica; }
+ul,ol, li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal; margin: 0px;}
+a{text-decoration:none;outline:none; cursor: pointer;}
+a:hover{text-decoration:none;}
+img{border:0px;outline:none;display:block;}
+/*=====FONT STYLE=====*/
+%font-helvetica{
+    font-family: 'helvetica-regular','Helvetica Neue',Helvetica,Arial,sans-serif;
+} 
+%font-helvetica-neue{
+    font-family: 'helvetica-neue',Helvetica,Arial,sans-serif;
+}
+body{
+    font-family: 'helvetica-regular','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p { font-family: 'helvetica-regular','Helvetica Neue',Helvetica,Arial,sans-serif;}
+/*=====FOR ALIGN STYLE =====*/
+%left{ float:left !important;}
+%right{ float:right !important;}
+%clear{ clear: both !important;}
+%fullWrap{ width:100%; float: left; box-sizing: border-box;}
+%halfWrap{ width:50%; float: left; box-sizing: border-box;}
+%textAlignCenter{
+   text-align: center;
+}
+/*=====TITLE STYLE =====*/
+@mixin titleHev($fontSize, $textColor, $lineHeight){  
+  @extend %font-helvetica; 
+  @extend %fullWrap; 
+  font-size: $fontSize; 
+  color:$textColor; 
+  line-height: $lineHeight;
+  letter-spacing: 1px;
+}
+@mixin paddingAll($paddingAll) { padding: $paddingAll;}
+@mixin borderRadius($radius){
+  -webkit-border-radius : $radius;
+     -moz-border-radius : $radius;
+      -ms-border-radius : $radius;
+          border-radius : $radius;
+}
+%btnBlueStyle{
+  @extend %font-helvetica;
+  background-color: #0093EE;
+  color:#fff;
+  height: 37px;
+  text-align: center;
+  border:0px;
+}
+.fullWrap{
+  @extend %fullWrap;
+  background-color: #000;
+  min-height: 500px;
+  .innerWrap{
+    margin: 0px auto;
+    min-height: 300px;
+    h1{
+      text-align: center;
+      width:100%;
+      color: #fff;
+      float: left;
+    }
+    .conntentWrap{
+      @extend %fullWrap;
+      min-height: 100px;
+    }
+
+    .boxWrap{
+      max-width: 500px;
+      margin: 10% 40%;
+      background: white;
+      padding: 10px;
+      min-height: 300px;
+    }
+  }
+}

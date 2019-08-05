@@ -1,0 +1,52 @@
+@import '../../../Style.scss';
+.formWrap{
+    @extend %fullWrap;
+    @include paddingAll(10px);
+    form{
+      @extend %fullWrap;
+    }
+    .logo{
+      text-align: center;
+    }
+    .signInFormWrap{
+        @extend %fullWrap;
+        margin-bottom: 10px;
+      }
+      .createAccBtn{
+        @extend %fullWrap;
+        @extend %btnBlueStyle;
+        @include borderRadius(2px);
+        outline: none;
+        &:hover{
+          background-color: #333;
+          color: #fff;
+        }
+        &:active{
+          background-color: #333;
+          color: #fff;
+        }
+        &:focus{
+          background-color: #0093EE;
+          color: #fff;
+        }
+        &:visited{
+          background-color:#333;
+          color: #fff;
+        }
+        &:disabled{ 
+          opacity: 0.6; 
+        }
+        &:disabled:hover{ 
+          background-color: #0093EE;
+          opacity: 0.6;
+          color: #fff;
+        }
+      }
+      .logo{
+        margin-bottom: 5%;
+        text-align: center
+      }
+      img {
+        display: inline-block;
+      }
+  }
